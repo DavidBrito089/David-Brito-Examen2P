@@ -36,7 +36,7 @@ private slots:
 
 private:
     Ui::Juego *ui;
-    QPainter *mPainter;
+    QPainter painter;
     QImage *mImagen;
     QPixmap lienzo;
     Circulo *m_circulo;

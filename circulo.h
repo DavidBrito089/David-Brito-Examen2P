@@ -14,7 +14,6 @@ public:
 
     int getYpos() const;
     void setYpos(int value);
-
 private:
     int xpos;
     int ypos;

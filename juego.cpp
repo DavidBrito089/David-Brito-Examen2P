@@ -13,9 +13,7 @@ Juego::Juego(QWidget *parent)
     m_circulo = new Circulo();
     m_circulo->setX(centro.x());
     m_circulo->setY(centro.y());
-    if(ui->btnAbajo->isChecked()){
-        on_btnAbajo_released();
-    }
+   on_btnAbajo_released();
 }
 
 Juego::~Juego()
@@ -27,25 +25,18 @@ Juego::~Juego()
 void Juego::on_btnArriba_released()
 {
     Configuracion a;
-    QPainter painter(&lienzo);
     QPen pens;
     pens.setColor(a.color());
-    pens.setWidth(450);
+    pens.setWidth(40);
     painter.setPen(pens);
-    painter.drawEllipse(m_circulo->x(),m_circulo->y()+10,m_circulo->x(),m_circulo->y()+10);
+    m_circulo->setYpos(m_circulo->getYpos()+60);
+    painter.drawEllipse(m_circulo->getXpos(),m_circulo->getYpos(),m_circulo->getXpos(),m_circulo->getYpos()+50);
 }
 
 
 void Juego::on_btnAbajo_released()
 {
-    Configuracion a;
-    QPainter painter(&lienzo);
-    QPen pens;
-    pens.setColor(a.color());
-    pens.setWidth(450);
-    painter.setPen(pens);
-    painter.drawEllipse(150,150,150,150);
-    update();
+
 }
 
 
@@ -57,7 +48,6 @@ void Juego::on_btnIzqueirda_released()
 
 void Juego::on_btnDerecha_released()
 {
-
 }
 
 
@@ -83,14 +73,17 @@ void Juego::dibujar()
     lienzo.fill(Qt::white);
     QPoint centro = ui->marco->geometry().center();
     m_circulo = new Circulo();
-        m_circulo->setX(centro.x());
-        m_circulo->setY(centro.y());
     QPainter painter(&lienzo);
     QPen pens;
     pens.setColor(a.color());
-    pens.setWidth(360);
+    pens.setWidth(40);
     painter.setPen(pens);
-    painter.drawEllipse(m_circulo->x(),m_circulo->y(),m_circulo->x(),m_circulo->y());
-
+    painter.drawEllipse(m_circulo->getXpos(),m_circulo->getYpos(),m_circulo->getXpos(),m_circulo->getYpos());
+    if(ui->btnArriba->isChecked()){
+        on_btnArriba_released();
+    }
+    if(ui->btnAbajo->isChecked()){
+        painter.drawEllipse(m_circulo->getXpos(),m_circulo->getYpos()-150,m_circulo->getXpos(),m_circulo->getYpos()-150);
+    }
 }
 

@@ -3,14 +3,14 @@
 Circulo::Circulo()
     :QPoint(0,0)
 {
-
+    setXpos(175);
+    setYpos(175);
 }
 
 Circulo::Circulo(int xpos, int ypos)
     :QPoint(xpos, ypos)
 {
-    xpos=450;
-    ypos=450;
+
 }
 
 int Circulo::getXpos() const

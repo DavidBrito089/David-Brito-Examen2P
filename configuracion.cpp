@@ -57,3 +57,8 @@ void Configuracion::on_btnColor_clicked()
                                     "Color del pincel");
 }
 
+
+void Configuracion::on_inDimension_actionTriggered(int action)
+{
+    action=m_dimension;
+}

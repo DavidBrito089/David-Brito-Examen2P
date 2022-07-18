@@ -27,6 +27,8 @@ private slots:
 
     void on_btnColor_clicked();
 
+    void on_inDimension_actionTriggered(int action);
+
 private:
     Ui::Configuracion *ui;
     QColor m_color;

@@ -1,6 +1,9 @@
+//Brito Vega Santiago David
+//1751398999
 #include "juego.h"
 
 #include <QApplication>
+
 
 int main(int argc, char *argv[])
 {

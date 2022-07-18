@@ -34,5 +34,7 @@ private slots:
 private:
     Ui::Juego *ui;
     Circulo *m_circulo;
+    QPainter *mPainter;
+    QImage *mImagen;
 };
 #endif // JUEGO_H

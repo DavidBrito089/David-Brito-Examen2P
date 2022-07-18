@@ -2,6 +2,7 @@
 #define CIRCULO_H
 
 #include <QPoint>
+#include <QPainter>
 
 class Circulo : public QPoint
 {

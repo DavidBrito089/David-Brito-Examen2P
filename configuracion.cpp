@@ -49,3 +49,11 @@ int Configuracion::dimension() const
     return m_dimension;
 }
 
+
+void Configuracion::on_btnColor_clicked()
+{
+    m_color = QColorDialog::getColor(m_color,
+                                    this,
+                                    "Color del pincel");
+}
+
